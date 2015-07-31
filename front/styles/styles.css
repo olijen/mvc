@@ -1,0 +1,257 @@
+body {
+    background: #eee;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #003366;
+    margin: 20px;
+}
+a {
+    color: #808080;
+    text-decoration: none;
+}
+h2 {
+    text-align: center;
+    font-size: 20px;
+    margin: 5px;
+
+}
+.header {
+    /*left: 50%;  Отступ в процентах от левого края окна */
+	/*position: absolute; /* Абсолютное позиционирование блока */
+    margin: 0;
+}
+ul.topmenu {text-align: center;
+    clear:both;
+    margin: 0 0 5px 0;
+    padding: 4px 4px 0 4px;
+}
+ul.topmenu li{
+    padding: 5px;
+    display: inline;
+    text-decoration: none;
+    width: 420px;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #aaa;
+    border-bottom: 0;
+    text-align: center;
+}
+a:hover {
+    color: black;
+}
+.topmenu li:hover {
+    background: #ccc;
+    color: #fff;
+}
+.content {
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+    padding:  10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    float:left;
+}
+.forms {
+    padding: 10px;
+
+}
+.left, .righta, form, form input, select {
+    border-radius: 2px;    
+}
+.left {
+    border-right: 1px solid #ccc;
+}
+form input, select {
+    background: #eee;
+    border: 1px solid #ccc;
+}
+form input:hover, select:hover {
+    background: #ccc;
+}
+form {
+    padding: 5px;
+}
+.comments {
+    height: 100px;
+    border: 1px solid grey;
+    overflow-y: scroll;
+    font-size: 12px;
+    margin: 5px;
+}
+.confirm, .deny {
+    /*opacity: 0.6;*/
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 100px;
+}
+.confirm:hover {
+     cursor: pointer;
+    background: #339966;
+}
+.deny:hover {
+     cursor: pointer;
+     background: #E55050;
+}
+table, tr, td
+{
+    margin: 10px;
+    border-bottom: 2px solid #bbb;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    text-align: center;
+    border-collapse:collapse;
+    padding:3px;
+}
+td {
+    padding: 7px 5px ;
+}
+.tables {
+
+}
+.thead {
+    background-color: #ccc;
+}
+.left, .right {
+    overflow: auto;
+    padding: 5px;
+    margin: 15px;
+    float: left;
+    
+    width:  45%;
+    height: 450px;
+}
+.right {
+
+}
+.clear {
+    clear: left;
+}
+.notices {
+    
+}
+.sub-notice {
+    /*border-radius: 5px;*/
+    margin: 5px;
+    padding: 5px;
+    float: left;
+    font-size: 12px;
+    color: #aaa;
+}
+.notice {
+    text-shadow: 0px 0px 0px #000;
+    border-left: 10px solid #1EB903;
+}
+.error {
+    text-shadow: 0px 0px 0px #000;
+    border-left: 10px solid #AC0101;
+}
+.access {
+    border-left: 10px solid #FFCC00;
+}
+.login_status {
+    float: right;
+}
+.green {
+    text-shadow: 1px 1px 2px black, 0 0 1em green; /* Параметры тени */
+    background-color: #CCFFCC;
+}
+.red {
+    text-shadow: 1px 1px 2px black, 0 0 1em red; /* Параметры тени */
+    background-color: #FF99CC;
+}
+.status {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: relative; /* Относительное позиционирование */
+    border: 0px solid white;    
+}
+.status:hover::after {
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0; right: 0; bottom: 0; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: rgba(0,5,5,0.6); /* Полупрозрачный цвет фона */
+    color: #fff; /* Цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 11px; /* Размер текста подсказки */
+    padding: 7px 10px; /* Поля */
+    
+}
+.filter a {
+    padding:  2px;
+    color: black;
+}
+.filter a:hover {
+    background:#eee;
+}
+
+
+/*--------------------------------*/
+.std-button {
+    color: #000;
+    border: 1px solid #ccc;
+    margin: 2px;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.std-button:hover {
+    background: #ccc;
+    cursor: pointer;
+}   
+
+
+#mask {
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:9000;
+    background-color:#000;
+    display:none;
+}
+#modal-head {
+    padding : 3px;
+    border-radius: 5px;
+    background: #ccc;
+    height: 30px;
+    margin-bottom: 10px;
+}
+#modal {
+    margin : 0;
+    padding: 0;
+    border-radius: 5px;
+    position:absolute;
+    left:0;
+    top:0;
+    display:none;
+    z-index:9999;
+    width:500px; 
+    height:500px;
+    background-color:#ffffff;
+        border: 1px solid grey;
+}
+#mod-content {
+    margin: 10px;
+
+    overflow-y: scroll;
+}
+#close {
+    float:right;
+    color: black;
+    text-align:  center;
+    background:  #008000;
+    border-radius: 12px;
+    width: 24px;
+    height: 24px;
+} 
+#close:hover {
+    color: red;
+    cursor: pointer;
+    background: #339966;
+}   
+#cars, #company, #drivers {
+    float:left;
+    padding: 10px;
+    margin: 10px;
+}
+.clear {
+    clear: both;
+}
