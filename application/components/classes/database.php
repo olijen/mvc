@@ -22,7 +22,7 @@
     private function __construct()
     {
         $dbConf = Registry::get('dbConf');
-        $this->mysqli = new mysqli('p:'.DB_HOST, DB_USER, DB_PWD, DB_NAME);
+        $this->mysqli = new mysqli(/*'p:'.*/DB_HOST, DB_USER, DB_PWD, DB_NAME);
         $this->mysqli->query("SET lc_time_names = 'ru_RU'");
         $this->mysqli->query("SET NAMES 'utf8'");
     }

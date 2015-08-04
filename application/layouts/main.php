@@ -8,7 +8,7 @@
 			<?php $this->block($this->blocks['header']) ?>
 		</header>
         
-		<div class="content">
+		<div id="content" class="content">
         
 			<?php $this->content() ?>
 		</div>

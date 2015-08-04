@@ -1,17 +1,18 @@
 <?php
 
-class Users extends AbstractTable
+class Users extends ActiveRecord
 {
 	public $id          = NULL;
 	public $username    = NULL;
     public $fio         = NULL;
 	public $password    = NULL;
 	public $status      = NULL;
+    public $email       = NULL;
 
 
-    public function save($new = false)
+    public function save($new = false, $primary = 'id')
     {
-        if (parent::save($new)) {
+        if (parent::save($new, $primary)) {
             $_SESSION['usr']['upd'] = 1;
             return true;
         } else return false;

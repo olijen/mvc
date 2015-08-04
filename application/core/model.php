@@ -6,6 +6,7 @@ class Model
     
     function __construct()
     {
-        $this->DB = DataBase::getDB();
+        if (!Registry::get('mysql_error'))
+            $this->DB = DataBase::getDB();
     }
 }

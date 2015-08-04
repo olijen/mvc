@@ -48,7 +48,7 @@ abstract class ActiveRecord extends BaseComponent
                         $validData[$k] = (float)$v;
                     }  
                 } elseif (is_string($v)) {
-                    $validData[$k] = mysql_escape_string($v);
+                    $validData[$k] = $v;//mysql_real_escape_string($v);
                 } elseif (is_array($v) || is_object($v)) {
                     $validData[$k] = json_encode($v);
                 }

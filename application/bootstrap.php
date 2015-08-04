@@ -13,10 +13,11 @@ require_once 'core/controller.php';
 
 require_once 'core/router.php';
 
-//----------------------------
 Tools::getSiteConfig();
 //----------------------------
-Tools::getSiteData();
+Tools::checkDatabase();
+//----------------------------
+//Tools::getSiteData(); # If you want
 //----------------------------
 Tools::getUserData();
 //----------------------------

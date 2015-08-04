@@ -1,10 +1,15 @@
 <div class="header">
+    <a href="/">
+
+        [<span style="color: red;">P</span>rism  MVC ]
+        
+    </a>
     <div class="login_status">
     <?php if (LOGGED) : ?>
     <div class="forms">
         <form method="POST" enctype="multipart/form-data"
         class="ajax_form"  action="javascript:void(null);"
-        onsubmit="call('<?= $this->path['site'].'/tools/logout' ?>')">
+        onsubmit="call('<?= '/tools/logout' ?>')">
           <b><?= Registry::get('user')->username ?> : </b>
           <input type="submit" class="deny" value="Выйти" />
         </form>
@@ -13,7 +18,7 @@
     <div class="forms">
     <form method="POST" enctype="multipart/form-data"
     class="ajax_form"  action="javascript:void(null);"
-    onsubmit="call('<?= $this->path['site'].'/tools/login' ?>')">
+    onsubmit="call('<?= '/tools/login' ?>')">
       
       <b>Введите логин</b>
       <input type="text" name="user[username]"/>      
@@ -48,6 +53,9 @@ echo $notices;
     <div id="topblock">
     	<ul class="topmenu">
     		<li><a href="/">Главная</a></li>
+            <li><a href="/tools/register">Регистрация</a></li>
+            <li><a href="/tools/migrate">Установка</a></li>
+            <li><a href="/">Информация</a></li>
     	</ul>
     </div>
 </div>

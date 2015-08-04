@@ -52,7 +52,7 @@ class Router
         if(file_exists($ctrlPath)) {
             require_once strtolower($ctrlPath);
         } else {
-            self::ErrorPage404();
+            self::e_404();
         }
 
         $ctrlFName = str_replace('_', '', $ctrlFName);
@@ -66,7 +66,7 @@ class Router
                 $ctrl->$action();
             }
         } else {
-            self::ErrorPage404();
+            self::e_404();
         }
     }
     
@@ -102,7 +102,7 @@ class Router
         }
     }
     
-    function e_404()
+    public static function e_404()
     {
         //$host = 'http://'.$_SERVER['HTTP_HOST'].'/';
         //header('HTTP/1.1 404 Not Found');

@@ -5,10 +5,17 @@ class Controller {
     protected $view;
     protected $_params;
     
+    public function __get($name)
+    {
+        
+    }
+    
     function __construct()
     {
         $this->_params = Router::$params;
         $this->view = new View();
+        if (Registry::get('mysql_error'))
+            $this->view->notice['error'] = "<a href='/tools/migrate/'>Нет подключения к базе данных</a>";
         $model = str_replace('_', '', 'Model'.Router::$ctrlName);
         $this->model = new $model;
         $this->accessControl(Router::$actionName);

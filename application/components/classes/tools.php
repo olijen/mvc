@@ -20,10 +20,21 @@ class Tools
        Registry::set('site', (object)$site);
     }
     
+    public static function checkDatabase()
+    {
+        $mysqli = @mysqli_connect(DB_HOST, DB_USER, DB_PWD, DB_NAME);
+        if (mysqli_connect_errno($mysqli))
+            Registry::set('mysql_error', "Не удалось подключиться к MySQL: " . mysqli_connect_error());
+        
+        Registry::set('mysqli', $mysqli);
+    }
+    
     public static function getUserData()
     {
         $logged = false;
-        if (isset($_SESSION['usr']['id'])) {
+        if (!empty($_SESSION['usr']['obj']) && is_string($_SESSION['usr']['obj']))
+            $bool = unserialize($_SESSION['usr']['obj']);
+        if (isset($_SESSION['usr']['id']) && !empty($bool)) {
             if (!empty($_SESSION['usr']['upd'])) {
                 $user = Users::getObj($_SESSION['usr']['id']);
                 $_SESSION['usr']['obj'] = serialize($user);
@@ -39,23 +50,14 @@ class Tools
     
     public static function getSiteConfig()
     {
-        define("SITENAME", "http://".$_SERVER["HTTP_HOST"]);
-        define("ROOTDIR",  $_SERVER['DOCUMENT_ROOT']);
-        define("APPDIR",   ROOTDIR.'/application');
-        define("FRONTDIR", ROOTDIR.'/front');
-        
-        define('DB_NAME', 'my_db');
-        define('DB_USER', 'root');
-        define('DB_HOST', 'localhost');
-        define('DB_PWD',  '');
+        require $_SERVER['DOCUMENT_ROOT'].'/application/config.php';
     }
     
-    public function getAccessData()//For special status
+    public static function getAccessData()//For special status
     {
         $G = true;
         $L = $A = false;
 
-        
         if (LOGGED) {
             $L = true;
             $G = false;
